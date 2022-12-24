@@ -1,0 +1,27 @@
+main{
+    width: 100%;
+    align-items: center;
+    min-height 100vh;
+    text-align: center;
+}
+ 
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.btn_group, .components{
+    display: flex;
+    align-items:center;
+}
+.count {
+    padding: 10px;
+}
+.components > div {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 8px;
+}
