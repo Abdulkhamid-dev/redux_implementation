@@ -1,0 +1,5 @@
+export const COUNT_TYPES = {
+    INCREMENT: "INCREMENT",
+    DECREMENT: "DECREMENT",
+}
+

@@ -1,38 +1,5 @@
-const COUNT_TYPES = {
-    INCREMENT: "INCREMENT",
-    DECREMENT: "DECREMENT",
-}
-const counter = (state = 0, action) => {
-    switch (action.type) {
-        case COUNT_TYPES.INCREMENT:
-            return state + 1;
-        case COUNT_TYPES.DECREMENT:
-            return state - 1;
-        default:
-            return state;
-    }
-};
-
-const createStore = (reducer) => {
-    let state;
-    let listeners = [];
-    const getState = () => state;
-    const dispatch = (action) => {
-        state = reducer(state, action);
-        console.log(listeners);
-        listeners.forEach((listener) => listener());
-    };
-    const subscribe = (listener) => {
-        listeners.push(listener);
-        return () => {
-            listeners = listeners.filter((l) => l !== listener);
-        };
-    };
-    dispatch({});
-    return { getState, dispatch, subscribe };
-};
-
-const store = createStore(counter);
+import { store } from "./store/store.js"
+import { COUNT_TYPES } from "./store/Counter/CountActions.js"
 
 const renderRealCount = () => {
     document.getElementById("count").innerText = store.getState()
